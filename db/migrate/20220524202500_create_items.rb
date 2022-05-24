@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.references :owner, null: false, foreign_key: {to_table: :users}
       t.references :category, null: false, foreign_key: true
       t.string :priority, default: "Normal"
-      t.boolean :completed, default: False
+      t.boolean :completed, default: false
       t.datetime :due_date
       t.text :description
       t.integer :interactions_count, default: 0
