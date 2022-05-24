@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: one
+  category: one
+  priority: MyString
+  status: MyString
+  due_date: 2022-05-24 20:25:40
+  description: MyText
+  interactions_count: 1
+
+two:
+  owner: two
+  category: two
+  priority: MyString
+  status: MyString
+  due_date: 2022-05-24 20:25:40
+  description: MyText
+  interactions_count: 1
