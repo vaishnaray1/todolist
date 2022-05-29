@@ -61,7 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # appdev Gems
 group :development do
-  gem 'annotate'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'awesome_print'
   gem 'better_errors'
@@ -71,7 +70,6 @@ group :development do
   gem 'rack-canonical-host'
   gem 'rails-erd'
   gem 'rollbar'
-  gem 'faker'
   gem "standard", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
