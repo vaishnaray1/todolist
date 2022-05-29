@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get ":username" => "users#show", as: :user
   
-  get ":username" => "users#show", as: :user
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
