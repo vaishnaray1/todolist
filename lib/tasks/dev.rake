@@ -27,10 +27,25 @@ task sample_data: :environment do
 
   end
 
+  categories = Array.new {}
 
+  categories << "Work"
+  categories << "School"
+  categories << "Hobbies"
+  categories << "Final Project"
+  categories << "Groceries"
+
+  categories.each do | theme |
+    Category.create(
+      title: theme
+    )
   p "#{Category.count} categories have been created"
-  p "#{Interaction.count} interactions have been created"
+  end
+
+
   p "#{Item.count} items have been created"
 
+
+  p "#{Interaction.count} interactions have been created"
 
 end
