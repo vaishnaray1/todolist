@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-  has_many(:interactions, { :class_name => "Interaction", :foreign_key => "item_id", :dependent => :destroy })
-  belongs_to(:category, { :required => true, :class_name => "Category", :foreign_key => "category_id", :counter_cache => true })
-  belongs_to(:owner, { :required => true, :class_name => "User", :foreign_key => "owner_id" })
+  belongs_to :category, class_name: "Category", counter_cache: true
+  belongs_to :owner, class_name: "User", counter_cache: true
+  has_many :interactions, foreign_key: :item_id, dependent: :destroy
+
 end
