@@ -3,6 +3,6 @@ class Item < ApplicationRecord
   #belongs_to(:category, { :required => true, :class_name => "Category", :foreign_key => "category_id", :counter_cache => true })
   #belongs_to(:owner, { :required => true, :class_name => "User", :foreign_key => "owner_id" })
 
-  belongs_to :owner, class_name: "User", counter_cache: true
+  #belongs_to :owner, class_name: "User", foreign_key: :owner_id, counter_cache: true
 
 end

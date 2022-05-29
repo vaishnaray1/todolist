@@ -63,21 +63,31 @@ task sample_data: :environment do
 
   30.times do 
     item = Item.new
-    item.owner_id = rand(1..usernames.length())
-    item.category_id = rand(1..categories.length())
+    item.owner_id = User.ids.sample
+    #item.owner_id = rand(1..usernames.length())
+    item.category_id = Category.ids.sample
+    #item.category_id = rand(1..categories.length())
     item.priority =  ["Normal", "Urgent"].sample
     item.completed =  false
-    item.due_date =  Faker::Date.forward(days: 23) + 
+    item.due_date =  Faker::Date.forward(days: 23) 
     item.description =  Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
     item.save
-    sample_items << item.id
+    # sample_items << item.id
   end
   p "#{Item.count} items have been created"
 
 
-  sample_items.each do
-
-
+  10.times do
+    interaction = Interaction.new
+    interaction.item_id = Item.ids.sample
+    interaction.user_id = User.ids.sample
+  end
+  # sample_items.each do | item_id |
+  #   Interaction.create(
+  #     item: item_id
+  #     user: User.ids.keys.sample
+  #     )
+  # end
   p "#{Interaction.count} interactions have been created"
 
 end
