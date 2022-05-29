@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: "items#index"
+
   resources :categories
   resources :interactions
   resources :items
