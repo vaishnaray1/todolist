@@ -47,38 +47,35 @@ task sample_data: :environment do
 
   #Create sample items
   
-  users.each do | user |
-    rand(10).times do
-      item = user.items.create(
-        category: 20
-        priority:  ["Normal", "Urgent"].sample
-        completed:  false
-        due_date:  Faker::Date.forward(days: 23)
-        description:  Faker::Verb.base
-      )
-    end
-  end
-  # 30.times do 
-  #   item = Item.new
-  #   item.owner_id = rand(1..usernames.length())
-  #   item.category_id = rand(1..categories.length())
-  #   item.priority =  ["Normal", "Urgent"].sample
-  #   item.completed =  false
-  #   item.due_date =  Faker::Date.forward(days: 23)
-  #   item.description =  Faker::Verb.base
-  #   item.save
+  # users.each do | user |
+  #   rand(10).times do
+  #     item = user.items.create(
+  #       category: rand(1..categories.length())
+  #       priority:  ["Normal", "Urgent"].sample
+  #       completed:  false
+  #       due_date:  Faker::Date.forward(days: 23)
+  #       description:  Faker::Verb.base
+  #     )
+  #   end
   # end
+
+  sample_items = Array.new{}
+
+  30.times do 
+    item = Item.new
+    item.owner_id = rand(1..usernames.length())
+    item.category_id = rand(1..categories.length())
+    item.priority =  ["Normal", "Urgent"].sample
+    item.completed =  false
+    item.due_date =  Faker::Date.forward(days: 23) + 
+    item.description =  Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4)
+    item.save
+    sample_items << item.id
+  end
   p "#{Item.count} items have been created"
-  # t.references :owner, null: false, foreign_key: {to_table: :users}
-  # t.references :category, null: false, foreign_key: true
-  # t.string :priority, default: "Normal"
-  # t.boolean :completed, default: false
-  # t.datetime :due_date
-  # t.text :description
-  # t.integer :interactions_count, default: 0
 
 
-  
+  sample_items.each do
 
 
   p "#{Interaction.count} interactions have been created"
