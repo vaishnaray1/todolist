@@ -1,1 +1,2 @@
-<%= @user.username %>'s to-do list
+<%= @user.username %>'s To Do List
+<%= render "users/items_tab", user: @user, items: @user.own_items %>

@@ -1,10 +1,10 @@
-<%= form_with(model: interaction) do |form| %>
-  <% if interaction.errors.any? %>
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(interaction.errors.count, "error") %> prohibited this interaction from being saved:</h2>
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
-        <% interaction.errors.each do |error| %>
+        <% task.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

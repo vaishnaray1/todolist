@@ -31,6 +31,8 @@ class User < ApplicationRecord
   has_many :interactions, foreign_key: :user_id, dependent: :destroy
   has_many :tasks, through: :interactions, source: :item
 
+  has_many :own_items, foreign_key: :owner_id, class_name: "Item", dependent: :destroy
+
 
 
 end
