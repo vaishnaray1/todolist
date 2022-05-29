@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   resources :interactions
   resources :items
   devise_for :users
+
+  get ":username" => "users#show", as: :user
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  
 
-  get ":username" => "users#show", as: :user
 
 
 end
