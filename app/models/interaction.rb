@@ -19,6 +19,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Interaction < ApplicationRecord
+
   belongs_to :item, class_name: "Item", counter_cache: true
   belongs_to :user, class_name: "User"
  

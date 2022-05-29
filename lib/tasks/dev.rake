@@ -83,12 +83,7 @@ task sample_data: :environment do
     interaction.user_id = User.ids.sample
     interaction.save
   end
-  # sample_items.each do | item_id |
-  #   Interaction.create(
-  #     item: item_id
-  #     user: User.ids.keys.sample
-  #     )
-  # end
+
   p "#{Interaction.count} interactions have been created"
 
 end

@@ -34,5 +34,4 @@ class User < ApplicationRecord
   has_many :own_items, foreign_key: :owner_id, class_name: "Item", dependent: :destroy
 
 
-
 end
