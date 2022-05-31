@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find_by!(username: params.fetch(:username))
   end
 
-  def feed
+  def tasks
     @user = User.find_by!(username: params.fetch(:username))
   end
 
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def following
     @user = User.find_by!(username: params.fetch(:username))
+  end
 
   def set_user
     if params[:username]
@@ -23,7 +24,6 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
-
   end
   
 end

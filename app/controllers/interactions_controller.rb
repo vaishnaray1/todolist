@@ -1,4 +1,5 @@
 class InteractionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_interaction, only: %i[ show edit update destroy ]
 
   # GET /interactions or /interactions.json
