@@ -1,9 +1,14 @@
 <tr>
-        <td><%= item.owner.username.capitalize() %></td>
-        <td><%= item.category.title.capitalize() %></td>
-        <td><%= item.priority %></td>
-        <td><%= item.completed %></td>
+      <td><%= item.owner.username.capitalize() %></td>
+      <td><%= item.category.title.capitalize() %></td>
+      <td><%= item.priority %></td>
 
+      <% completed = item.completed %>
+
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+      
+      
+              
             <td id="<%= dom_id(item) %>_complete" >
                   <% if not completed %>
                     <%= render "items/complete", item: item %>
