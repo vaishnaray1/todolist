@@ -1,0 +1,21 @@
+<%= form_with(model: item, local: false) do |form| %>
+
+    <%= form.hidden_field  :owner_id %>
+
+    <%= form.hidden_field  :completed, :value => false %>
+
+    <%= form.hidden_field  :due_date %>
+
+      <%= form.hidden_field  :description %>
+      <%= form.hidden_field  :interactions_count %>
+      <%= form.hidden_field  :category_id %>
+      <%= form.hidden_field  :priority %>
+   
+    
+
+ 
+
+<%= form.button class: "btn btn-link" do %>
+     <i class="fa fa-light fa-square-check"></i>
+  <% end %>
+<% end %>
